@@ -7,14 +7,17 @@ const Constraint=Matter.Constraint;
 var engine,world;
 var ground
 var Block1,Block2,Block3,Block4,Block5,Block6,Block7,Block8,Block9,Block10,Block11,Block12,Block13,Block14,Block15,Block16,Block17,Block18,Block19,Block20,Block21;
-var polygon;
+var stand1;
 
 function setup() {
 	createCanvas(1300, 600);
 	engine = Engine.create();
 	world = engine.world;
    
-	ground1 = new Ground(450,390,900,20);
+	ground1 = new Ground(450,590,900,20);
+
+    stand1 = new Ground(380,385,300,20)
+  
 
 	Block1  = new Block(280, 275, 30, 40);
     Block2  = new Block(310, 275, 30, 40);
@@ -43,7 +46,11 @@ function setup() {
 
 function draw() {
 
-    background(230);
+    background("black");
+    textSize(20)
+    fill("white")
+    text("Drag the Hexagonal Stone and Release it,to launch it towards the blocks",50,50)
+    
 
     ground1.display();
    
@@ -68,13 +75,6 @@ function draw() {
     Block19.display()
     Block20.display()
     Block21.display()
-
-    polygon.display()
-
-
-
-
-
-
-    
+  
+    stand1.display()
 }
